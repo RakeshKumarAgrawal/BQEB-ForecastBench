@@ -1,3 +1,8 @@
 # Design
 
-Architecture decisions, benchmark protocol specifications, and design notes.
+Read these pages for implemented architecture and extension boundaries:
+
+- [Model architecture](model_architecture.md)
+- [Training pipeline](training_pipeline.md)
+- [Evaluation framework](evaluation_framework.md)
+- [Commit 4 architecture history](commit4_architecture.md)

@@ -1,3 +1,3 @@
 # Reports
 
-Generated benchmark summaries and reports belong here.
+Generated validation, benchmark, and experiment reports belong here.

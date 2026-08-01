@@ -1,0 +1,65 @@
+{
+  "configuration_hash": "d6289b2c451f33a39392fc26b556bbfecc84ff9f52d9953bb94b9f2259902b8e",
+  "dataset_fingerprint": "be6b8dcca5d1bdd5472c64c5380f3ca548c91db5f3a03fdd87dbb6b50764d1ea",
+  "experiment_manifest_reference": {
+    "experiment_id": "forecastbench-baselines-20260801T061253803994Z-d6289b2c451f",
+    "git_commit": "5bde0fe9959fed7307a3aae8f1927acd59fdfb8b",
+    "path": "artifacts/experiments/experiment_manifest.json",
+    "schema_version": 1,
+    "sha256": "c8f5807bd11bec78871156f24fefe4b56a62e1908c3252383b23f50d1cd95a6b"
+  },
+  "generated_artifacts": {
+    "checkpoints": [
+      "artifacts/checkpoints/linear_regression-20260801T045212952850Z.checkpoint.joblib"
+    ],
+    "dataset": [
+      "artifacts/profiles/dataset_statistics.csv",
+      "artifacts/profiles/dataset_statistics.md",
+      "artifacts/splits/test.csv",
+      "artifacts/splits/train.csv",
+      "artifacts/splits/validation.csv"
+    ],
+    "evaluation": [
+      "artifacts/evaluation/benchmark_results.csv",
+      "artifacts/evaluation/evaluation_log.json",
+      "artifacts/evaluation/metrics.csv",
+      "artifacts/evaluation/metrics.json",
+      "artifacts/evaluation/model_comparison.csv",
+      "artifacts/evaluation/predictions.csv"
+    ],
+    "models": [
+      "artifacts/models/linear_regression-20260801T045212941487Z.joblib"
+    ],
+    "training": [
+      "artifacts/training/training_history.json",
+      "artifacts/training/training_summary.md"
+    ]
+  },
+  "git_branch": "develop",
+  "git_commit": "eb238c9506b00bf9d9c30a13020ca485793d1e3d",
+  "package_version": "0.4.0",
+  "publication_figures": [
+    "artifacts/figures/Figure4_PerformanceComparison.png",
+    "artifacts/figures/Figure4_PerformanceComparison.svg",
+    "artifacts/figures/Figure4_caption.md",
+    "artifacts/figures/Figure5_ActualVsPredicted.png",
+    "artifacts/figures/Figure5_ActualVsPredicted.svg",
+    "artifacts/figures/Figure5_caption.md"
+  ],
+  "publication_tables": [
+    "artifacts/tables/Table5_BenchmarkResults.csv",
+    "artifacts/tables/Table5_BenchmarkResults.md"
+  ],
+  "release_candidate": true,
+  "reports": [
+    "artifacts/reports/benchmark_report.md",
+    "artifacts/reports/evaluation_summary.md",
+    "artifacts/reports/experiment_report.md",
+    "artifacts/reports/validation_report.json",
+    "artifacts/reports/validation_report.md"
+  ],
+  "repository_name": "BQEB-ForecastBench",
+  "repository_version": "0.4.0",
+  "schema_version": 1,
+  "timestamp": "2026-08-01T06:18:39.179327+00:00"
+}

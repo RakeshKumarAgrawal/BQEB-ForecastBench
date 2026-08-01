@@ -1,0 +1,20 @@
+{
+  "records": [
+    {
+      "checkpoint_location": "C:\\Users\\aayus\\Downloads\\BQEB\\BQEB-ForecastBench\\artifacts\\checkpoints\\linear_regression-20260801T045212952850Z.checkpoint.joblib",
+      "configuration_hash": "1f1cf4ee1b26a63014bde5b4b7077fbb4f4fc24127d0aa1fe0183ac1699ebbec",
+      "duration_seconds": 0.013368,
+      "end_time": "2026-08-01T04:52:12.954855+00:00",
+      "model_name": "linear_regression",
+      "parameters": {
+        "copy_X": true,
+        "fit_intercept": true,
+        "n_jobs": null,
+        "positive": false
+      },
+      "start_time": "2026-08-01T04:52:12.941487+00:00",
+      "status": "completed"
+    }
+  ],
+  "schema_version": 1
+}

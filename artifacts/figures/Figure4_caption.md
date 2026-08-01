@@ -1,0 +1,1 @@
+**Figure 4. Forecasting performance comparison.** MAE, RMSE, MAPE, and R² for each baseline model on the training, validation, and test partitions. Values are plotted directly from `artifacts/evaluation/metrics.csv`.

@@ -1,0 +1,216 @@
+BQEB-ForecastBench/
+|-- .github
+|   `-- workflows
+|       `-- ci.yml
+|-- artifacts
+|   |-- checkpoints
+|   |   |-- linear_regression-20260801T045212952850Z.checkpoint.joblib
+|   |   `-- README.md
+|   |-- evaluation
+|   |   |-- benchmark_results.csv
+|   |   |-- evaluation_log.json
+|   |   |-- metrics.csv
+|   |   |-- metrics.json
+|   |   |-- model_comparison.csv
+|   |   |-- predictions.csv
+|   |   `-- README.md
+|   |-- experiments
+|   |   |-- experiment_manifest.json
+|   |   `-- README.md
+|   |-- figures
+|   |   |-- Figure4_caption.md
+|   |   |-- Figure4_PerformanceComparison.png
+|   |   |-- Figure4_PerformanceComparison.svg
+|   |   |-- Figure5_ActualVsPredicted.png
+|   |   |-- Figure5_ActualVsPredicted.svg
+|   |   |-- Figure5_caption.md
+|   |   `-- README.md
+|   |-- models
+|   |   |-- linear_regression-20260801T045212941487Z.joblib
+|   |   `-- README.md
+|   |-- profiles
+|   |   |-- dataset_statistics.csv
+|   |   |-- dataset_statistics.md
+|   |   `-- README.md
+|   |-- reports
+|   |   |-- benchmark_report.md
+|   |   |-- evaluation_summary.md
+|   |   |-- experiment_report.md
+|   |   |-- README.md
+|   |   |-- validation_report.json
+|   |   `-- validation_report.md
+|   |-- splits
+|   |   |-- README.md
+|   |   |-- test.csv
+|   |   |-- train.csv
+|   |   `-- validation.csv
+|   |-- tables
+|   |   |-- Table5_BenchmarkResults.csv
+|   |   `-- Table5_BenchmarkResults.md
+|   |-- training
+|   |   |-- training_history.json
+|   |   `-- training_summary.md
+|   `-- README.md
+|-- benchmark
+|   |-- config
+|   |   |-- __init__.py
+|   |   |-- config.py
+|   |   |-- environment.py
+|   |   |-- evaluation.yaml
+|   |   |-- forecastbench.yaml
+|   |   |-- models.yaml
+|   |   `-- training.yaml
+|   |-- evaluation
+|   |   |-- __init__.py
+|   |   |-- benchmark.py
+|   |   |-- comparison.py
+|   |   |-- evaluator.py
+|   |   |-- experiment.py
+|   |   |-- exporter.py
+|   |   |-- manifest.py
+|   |   |-- metrics.py
+|   |   |-- predictions.py
+|   |   |-- registry.py
+|   |   `-- results.py
+|   |-- models
+|   |   |-- __init__.py
+|   |   |-- _sklearn_model.py
+|   |   |-- base_model.py
+|   |   |-- factory.py
+|   |   |-- gradient_boosting.py
+|   |   |-- linear_regression.py
+|   |   |-- random_forest.py
+|   |   `-- registry.py
+|   |-- preprocessing
+|   |   |-- __init__.py
+|   |   |-- loader.py
+|   |   |-- pipeline.py
+|   |   |-- profiling.py
+|   |   |-- schema.py
+|   |   |-- splitter.py
+|   |   |-- transformer.py
+|   |   `-- validator.py
+|   |-- publication
+|   |   |-- __init__.py
+|   |   |-- figures.py
+|   |   |-- generator.py
+|   |   |-- inputs.py
+|   |   |-- reports.py
+|   |   `-- tables.py
+|   |-- training
+|   |   |-- __init__.py
+|   |   |-- callbacks.py
+|   |   |-- checkpoint.py
+|   |   |-- history.py
+|   |   |-- model_io.py
+|   |   `-- trainer.py
+|   |-- utils
+|   |   |-- __init__.py
+|   |   |-- filesystem.py
+|   |   `-- logging.py
+|   |-- visualization
+|   |   `-- __init__.py
+|   |-- __init__.py
+|   |-- constants.py
+|   |-- py.typed
+|   `-- README.md
+|-- data
+|   |-- processed
+|   |   `-- README.md
+|   |-- raw
+|   |   `-- README.md
+|   |-- sample
+|   |   |-- bqeb_sample.csv
+|   |   `-- README.md
+|   `-- README.md
+|-- docs
+|   |-- api
+|   |   |-- evaluation.md
+|   |   |-- models.md
+|   |   |-- preprocessing.md
+|   |   |-- README.md
+|   |   `-- training.md
+|   |-- design
+|   |   |-- commit4_architecture.md
+|   |   |-- evaluation_framework.md
+|   |   |-- model_architecture.md
+|   |   |-- README.md
+|   |   `-- training_pipeline.md
+|   |-- figures
+|   |   `-- README.md
+|   `-- README.md
+|-- publication_evidence
+|   `-- README.md
+|-- publication_review
+|   `-- README.md
+|-- release
+|   |-- publication_evidence
+|   |   |-- artifact_inventory.md
+|   |   |-- environment_summary.md
+|   |   |-- evidence_index.md
+|   |   |-- publication_manifest.json
+|   |   |-- repository_inventory.md
+|   |   `-- repository_tree.txt
+|   `-- README.md
+|-- tests
+|   |-- evaluation
+|   |   |-- __init__.py
+|   |   |-- conftest.py
+|   |   |-- README.md
+|   |   |-- test_benchmark.py
+|   |   |-- test_comparison.py
+|   |   |-- test_evaluator.py
+|   |   |-- test_experiment.py
+|   |   |-- test_exporter.py
+|   |   |-- test_manifest.py
+|   |   |-- test_metrics.py
+|   |   |-- test_predictions.py
+|   |   |-- test_registry.py
+|   |   `-- test_results.py
+|   |-- models
+|   |   |-- conftest.py
+|   |   |-- README.md
+|   |   |-- test_base_model.py
+|   |   |-- test_factory.py
+|   |   |-- test_gradient_boosting.py
+|   |   |-- test_linear_regression.py
+|   |   |-- test_random_forest.py
+|   |   `-- test_registry.py
+|   |-- preprocessing
+|   |   |-- README.md
+|   |   |-- test_loader.py
+|   |   |-- test_pipeline.py
+|   |   |-- test_profiling.py
+|   |   |-- test_schema.py
+|   |   |-- test_splitter.py
+|   |   |-- test_transformer.py
+|   |   `-- test_validator.py
+|   |-- publication
+|   |   |-- __init__.py
+|   |   |-- test_artifacts.py
+|   |   |-- test_figures.py
+|   |   |-- test_reports.py
+|   |   `-- test_tables.py
+|   |-- training
+|   |   |-- README.md
+|   |   |-- test_callbacks.py
+|   |   |-- test_checkpoint.py
+|   |   |-- test_history.py
+|   |   |-- test_model_io.py
+|   |   `-- test_trainer.py
+|   |-- README.md
+|   |-- test_config.py
+|   |-- test_constants.py
+|   |-- test_environment.py
+|   |-- test_filesystem.py
+|   `-- test_logging.py
+|-- .editorconfig
+|-- .gitattributes
+|-- .gitignore
+|-- .pre-commit-config.yaml
+|-- .python-version
+|-- LICENSE
+|-- pyproject.toml
+|-- README.md
+|-- requirements.txt
+`-- setup.cfg

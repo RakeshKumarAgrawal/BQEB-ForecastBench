@@ -1,3 +1,4 @@
 # Model Tests
 
-Tests for forecasting model interfaces and implementations will live here.
+Tests for the abstract forecasting contract, registry lifecycle,
+configuration-driven factory, and concrete baseline models live here.
