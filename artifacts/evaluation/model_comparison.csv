@@ -1,0 +1,5 @@
+Metric,BestModel,BestValue,WorstModel,WorstValue,Ranking
+mae,gradient_boosting,25.240395589345088,linear_regression,43.24327527788853,"[""gradient_boosting"",""random_forest"",""linear_regression""]"
+rmse,gradient_boosting,25.344655920480122,linear_regression,44.21482202185659,"[""gradient_boosting"",""random_forest"",""linear_regression""]"
+mape,gradient_boosting,0.14154082507783158,linear_regression,0.24224153388856481,"[""gradient_boosting"",""random_forest"",""linear_regression""]"
+r2,gradient_boosting,-84.09220273105274,linear_regression,-257.97195139564326,"[""gradient_boosting"",""random_forest"",""linear_regression""]"

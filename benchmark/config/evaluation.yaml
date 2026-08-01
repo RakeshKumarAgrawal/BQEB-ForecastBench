@@ -1,0 +1,42 @@
+# Evaluation engine configuration. Paths are repository-relative.
+
+evaluation:
+  dataset: bqeb_test
+  experiment_name: forecastbench-baselines
+  enabled_metrics:
+    - mae
+    - rmse
+    - mape
+    - r2
+  options:
+    primary_metric: rmse
+    persist_artifacts: true
+  prediction_output:
+    enabled: false
+    include_in_evaluation_log: false
+  artifact_locations:
+    evaluation: artifacts/evaluation
+    experiments: artifacts/experiments
+    metrics_filename: metrics.json
+    log_filename: evaluation_log.json
+    metrics_csv_filename: metrics.csv
+    benchmark_results_filename: benchmark_results.csv
+    predictions_filename: predictions.csv
+    model_comparison_filename: model_comparison.csv
+    manifest_filename: experiment_manifest.json
+  dataset_splits:
+    paths:
+      train: artifacts/splits/train.csv
+      validation: artifacts/splits/validation.csv
+      test: artifacts/splits/test.csv
+    target_column: load_kw
+    timestamp_column: timestamp
+    sample_id_column: null
+  models:
+    selection: all_registered
+    source: fit_from_training_split
+    artifact_directory: artifacts/models
+  random_seed: 42
+  logging:
+    level: INFO
+    console: true

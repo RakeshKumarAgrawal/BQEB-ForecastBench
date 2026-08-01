@@ -1,0 +1,1 @@
+**Figure 5. Actual versus predicted load.** Observed load and baseline predictions across the training, validation, and test partitions; dashed lines mark partition boundaries. Values are plotted directly from `artifacts/evaluation/predictions.csv`.

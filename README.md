@@ -1,6 +1,6 @@
 # BQEB ForecastBench
 
-BQEB ForecastBench is a Python 3.12 framework for reproducible smart-grid forecasting research with the BQEB-Data v1 dataset. Commit 4 includes dataset preprocessing, three baseline regressors, configuration-driven training, callbacks, checkpoints, versioned model artifacts, and training history. Evaluation metrics, benchmark execution, visualization, and publication outputs begin in Commit 5.
+BQEB ForecastBench is a Python 3.12 framework for reproducible smart-grid forecasting research with the BQEB-Data v1 dataset. The repository includes dataset preprocessing, three baseline regressors, configuration-driven training, benchmark evaluation, machine-readable experiment artifacts, and publication-ready tables, figures, and reports.
 
 ## Install the project
 
@@ -23,8 +23,10 @@ The repository separates data preparation, model behavior, and training orchestr
 ```text
 benchmark/
 ├── config/          YAML configuration and application settings
+├── evaluation/      Metrics, experiments, comparison, and benchmark exports
 ├── models/          Base contract, registry, factory, and baseline models
 ├── preprocessing/   Validation, profiling, transformation, and splitting
+├── publication/     Publication tables, figures, captions, and reports
 ├── training/        Trainer, callbacks, checkpoints, history, and model I/O
 └── utils/           Shared filesystem and logging utilities
 data/
@@ -32,27 +34,32 @@ data/
 ├── processed/       Reproducible transformed data
 └── sample/          Small distributable examples
 artifacts/
+├── evaluation/      Metrics, predictions, rankings, and evaluation logs
+├── experiments/     Versioned reproducibility manifests
+├── figures/         Publication figures and captions
 ├── models/          Versioned trained-model envelopes
 ├── checkpoints/     Timestamped recovery records
 ├── profiles/        Dataset profile exports
-├── reports/         Validation reports
+├── reports/         Validation and benchmark reports
 ├── splits/          Train, validation, and test partitions
+├── tables/          Publication-ready benchmark tables
 └── training/        JSON history and Markdown operational summaries
 docs/
 ├── api/             Public API references
 └── design/          Architecture and lifecycle descriptions
-tests/               Model, preprocessing, training, and infrastructure tests
+tests/               Evaluation, publication, model, data, and infrastructure tests
 ```
 
 The model factory resolves classes through `ModelRegistry`. `ModelTrainer` uses that factory and delegates persistence, callbacks, and history to focused modules. See [model architecture](docs/design/model_architecture.md) and [training pipeline](docs/design/training_pipeline.md).
 
 ## Configure a run
 
-ForecastBench uses three YAML files:
+ForecastBench uses four YAML files:
 
 - `benchmark/config/forecastbench.yaml`: application paths, dataset schema, preprocessing, and split settings
 - `benchmark/config/models.yaml`: enabled baseline models and documented estimator defaults
 - `benchmark/config/training.yaml`: default model, random seed, checkpoint interval, artifact paths, logging, and serialization
+- `benchmark/config/evaluation.yaml`: benchmark datasets, metrics, model selection, output paths, and reproducibility settings
 
 Application settings support `BQEB_ENVIRONMENT`, `BQEB_DATA_DIR`, `BQEB_ARTIFACTS_DIR`, `BQEB_LOG_LEVEL`, `BQEB_LOG_FILE`, and `BQEB_RANDOM_SEED` overrides. Environment variables take precedence over `forecastbench.yaml`.
 
@@ -115,6 +122,20 @@ A successful run writes a trained model, an interval-controlled checkpoint, `tra
 
 Only load joblib files from trusted sources. Joblib deserialization can execute code.
 
+## Evaluate and publish benchmark results
+
+`BenchmarkRunner` executes the configured baseline models across the training,
+validation, and test partitions. It writes metric, prediction, comparison, and
+manifest artifacts under `artifacts/evaluation/` and `artifacts/experiments/`.
+Read the [evaluation API](docs/api/evaluation.md) and
+[evaluation framework](docs/design/evaluation_framework.md) for the execution
+and reproducibility contracts.
+
+The publication package consumes those persisted benchmark artifacts without
+retraining models or recomputing metrics. Generated Table 5 files, Figures 4
+and 5, captions, and Markdown reports are stored under `artifacts/tables/`,
+`artifacts/figures/`, and `artifacts/reports/`.
+
 ## Run development checks
 
 Run the same gates as continuous integration (CI):
@@ -132,13 +153,13 @@ GitHub Actions runs formatting, linting, strict type checks, and tests on Window
 ## Follow the development roadmap
 
 - **Commit 3, frozen**: reproducible dataset preprocessing
-- **Commit 4, freeze candidate**: model framework, baseline models, and training pipeline
-- **Commit 5, next**: benchmark evaluation framework and metrics
-- **Later work**: visualization and publication artifacts after evaluation stabilizes
+- **Commit 4, frozen**: model framework, baseline models, and training pipeline
+- **Commit 5, validation**: evaluation engine, benchmark outputs, and publication assets are implemented
+- **Next**: Commit 5.5 publication evidence package after Commit 5 freezes
 
 ## Check current status
 
-Commit 4 implementation is complete and undergoing final freeze review. The repository contains no benchmark evaluation, metrics, visualization, figures, tables, or publication reports.
+Commit 5 Batches 1 through 3 are complete. The evaluation framework, reproducible benchmark outputs, and publication assets are implemented and undergoing the final validation and freeze gate.
 
 ## License
 
