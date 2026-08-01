@@ -5,7 +5,7 @@ from typing import Final
 
 PROJECT_NAME: Final = "BQEB ForecastBench"
 PACKAGE_NAME: Final = "bqeb-forecastbench"
-VERSION: Final = "0.4.0"
+VERSION: Final = "1.0.0"
 
 PROJECT_ROOT: Final = Path(__file__).resolve().parent.parent
 DATA_DIR: Final = PROJECT_ROOT / "data"

@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use BQEB ForecastBench, please cite the software using this metadata."
+title: "BQEB ForecastBench: A Reproducible Smart-Grid Forecasting Benchmark Framework"
+type: software
+authors:
+  - family-names: Agrawal
+    given-names: Rakesh Kumar
+    orcid: "https://orcid.org/0009-0009-7113-5539"
+repository-code: "https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench"
+url: "https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench"
+version: 1.0.0
+date-released: 2026-08-01
+license: MIT
+keywords:
+  - benchmarking
+  - forecasting
+  - machine learning
+  - reproducible research
+  - smart grid
+  - time series
+preferred-citation:
+  type: software
+  title: "BQEB ForecastBench: A Reproducible Smart-Grid Forecasting Benchmark Framework"
+  authors:
+    - family-names: Agrawal
+      given-names: Rakesh Kumar
+      orcid: "https://orcid.org/0009-0009-7113-5539"
+  repository-code: "https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench"
+  version: 1.0.0
+  date-released: 2026-08-01

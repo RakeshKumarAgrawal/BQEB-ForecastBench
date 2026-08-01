@@ -157,11 +157,20 @@ GitHub Actions runs formatting, linting, strict type checks, and tests on Window
 - ✓ **Commit 3 Complete**: reproducible dataset preprocessing
 - ✓ **Commit 4 Complete**: model framework, baseline models, and training pipeline
 - ✓ **Commit 5 Complete**: evaluation engine, benchmark outputs, and publication assets
+- ✓ **Commit 5.5 Complete**: publication evidence package
+- **Commit 6 Release Candidate**: official v1.0.0 release metadata
 
 ## Check current status
 
-Commit 5 completed. The repository is ready for Commit 5.5, the Publication
-Evidence Package.
+Commits 1 through 5.5 are complete and frozen. Version 1.0.0 release metadata
+is prepared for final verification; no GitHub release or tag has been created.
+
+## Cite and review the release
+
+Use [CITATION.cff](CITATION.cff) for software citation metadata. See the
+[changelog](CHANGELOG.md), [release notes](RELEASE_NOTES.md), and
+[GitHub release draft](release/github_release.md) for the v1.0.0 release
+record.
 
 ## License
 
