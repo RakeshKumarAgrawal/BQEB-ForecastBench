@@ -73,7 +73,10 @@ Citation metadata is provided in `CITATION.cff` for Rakesh Kumar Agrawal (ORCID:
 
 ## DOI
 
-Zenodo DOI: `10.5281/zenodo.TBD` (placeholder; minting occurs after release verification).
+Official Software DOI: https://doi.org/10.5281/zenodo.21735978
+
+The Research Square preprint remains a distinct scientific publication:
+https://doi.org/10.21203/rs.3.rs-10484554/v1
 
 ## Checksums
 

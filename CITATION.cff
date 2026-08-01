@@ -8,7 +8,8 @@ authors:
     orcid: "https://orcid.org/0009-0009-7113-5539"
 repository-code: "https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench"
 url: "https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench"
-version: 1.0.0
+version: v1.0.0
+doi: "10.5281/zenodo.21735978"
 date-released: 2026-08-01
 license: MIT
 keywords:
@@ -26,5 +27,6 @@ preferred-citation:
       given-names: Rakesh Kumar
       orcid: "https://orcid.org/0009-0009-7113-5539"
   repository-code: "https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench"
-  version: 1.0.0
+  version: v1.0.0
+  doi: "10.5281/zenodo.21735978"
   date-released: 2026-08-01

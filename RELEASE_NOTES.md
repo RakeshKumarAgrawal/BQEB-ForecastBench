@@ -47,7 +47,16 @@ These values are transcribed from the frozen `artifacts/evaluation/benchmark_res
 
 The frozen experiment manifest records the configuration hash, dataset fingerprint, source commit, model versions, Python runtime, dependencies, platform, and random seed. The publication manifest links the experiment snapshot to all release evidence.
 
-Release metadata uses version `1.0.0`. Frozen scientific artifacts and the Commit 5.5 evidence snapshot retain repository version `0.4.0`, the version under which they were generated and verified. Preserving those historical values prevents provenance rewriting.
+Release metadata uses version `v1.0.0`. Frozen scientific artifacts and the Commit 5.5 evidence snapshot retain repository version `0.4.0`, the version under which they were generated and verified. Preserving those historical values prevents provenance rewriting.
+
+## Citation and Availability
+
+- Repository: https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench
+- GitHub Release v1.0.0: https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench/releases/tag/v1.0.0
+- Zenodo software DOI: https://doi.org/10.5281/zenodo.21735978
+- Research Square preprint DOI: https://doi.org/10.21203/rs.3.rs-10484554/v1
+
+The Zenodo DOI identifies the official software implementation and permanent repository archive. The Research Square DOI identifies the earlier scientific preprint and remains a separate publication-history reference. The release archive includes BQEB-Data v1 benchmark artifacts, the experiment manifest, and the publication evidence package needed for reproducibility review.
 
 ## Known Limitations
 
@@ -55,10 +64,9 @@ Release metadata uses version `1.0.0`. Frozen scientific artifacts and the Commi
 - The release includes three classical regression baselines; neural, probabilistic, and domain-adapted forecasting models are not included.
 - Test-partition R-squared values are negative for all bundled baselines, indicating limited generalization on the small frozen split.
 - The historical experiment configuration records absolute Windows artifact paths from the execution environment.
-- A Zenodo DOI is not assigned until the verified release is published and archived.
 
 ## Future Work
 
 - Expand evaluation to larger public smart-grid datasets and additional forecasting horizons.
 - Add probabilistic forecasts, uncertainty metrics, and stronger baseline families.
-- Synchronize the software release with Paper Version 2.0 and archive the verified release in Zenodo.
+- Synchronize the verified software release metadata with Paper Version 2.0.

@@ -158,19 +158,50 @@ GitHub Actions runs formatting, linting, strict type checks, and tests on Window
 - ✓ **Commit 4 Complete**: model framework, baseline models, and training pipeline
 - ✓ **Commit 5 Complete**: evaluation engine, benchmark outputs, and publication assets
 - ✓ **Commit 5.5 Complete**: publication evidence package
-- **Commit 6 Release Candidate**: official v1.0.0 release metadata
+- ✓ **Commit 6 Complete**: official v1.0.0 release metadata
 
 ## Check current status
 
-Commits 1 through 5.5 are complete and frozen. Version 1.0.0 release metadata
-is prepared for final verification; no GitHub release or tag has been created.
+Commits 1 through 6 are complete and frozen. Version v1.0.0 is published as
+an annotated Git tag, a GitHub Release, and a permanent Zenodo software archive.
 
-## Cite and review the release
+## Citation
 
-Use [CITATION.cff](CITATION.cff) for software citation metadata. See the
-[changelog](CHANGELOG.md), [release notes](RELEASE_NOTES.md), and
-[GitHub release draft](release/github_release.md) for the v1.0.0 release
-record.
+If you use **BQEB-ForecastBench** in academic research, please cite both the
+software release and the associated scientific publication.
+
+### Software Citation
+
+**BQEB-ForecastBench v1.0.0**
+
+Zenodo Software DOI: https://doi.org/10.5281/zenodo.21735978
+
+See [CITATION.cff](CITATION.cff) for structured citation metadata and the
+[GitHub v1.0.0 release](https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench/releases/tag/v1.0.0)
+for the archived release record.
+
+### Scientific Publication
+
+**Research Square Preprint**
+
+Preprint DOI: https://doi.org/10.21203/rs.3.rs-10484554/v1
+
+The Research Square DOI identifies the scientific preprint. The Zenodo DOI
+identifies the versioned software implementation and permanent repository
+archive; the two records are distinct and complementary.
+
+## Code and data availability
+
+The source code is public at
+https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench. Version v1.0.0 is
+available through the GitHub Release and archived under the Zenodo software DOI
+above. The benchmark uses BQEB-Data v1. Frozen benchmark artifacts, the
+[experiment manifest](artifacts/experiments/experiment_manifest.json), and the
+[reproducibility evidence package](release/publication_evidence/evidence_index.md)
+are included in the repository archive.
+
+See the [changelog](CHANGELOG.md) and [release notes](RELEASE_NOTES.md) for the
+v1.0.0 release record.
 
 ## License
 
