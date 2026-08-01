@@ -51,10 +51,10 @@
     },
     "configuration_hash": "d6289b2c451f33a39392fc26b556bbfecc84ff9f52d9953bb94b9f2259902b8e",
     "dataset_fingerprint": "be6b8dcca5d1bdd5472c64c5380f3ca548c91db5f3a03fdd87dbb6b50764d1ea",
-    "execution_timestamp": "2026-08-01T06:03:47.508477+00:00",
-    "experiment_id": "forecastbench-baselines-20260801T060347508477Z-d6289b2c451f",
+    "execution_timestamp": "2026-08-01T06:12:53.803994+00:00",
+    "experiment_id": "forecastbench-baselines-20260801T061253803994Z-d6289b2c451f",
     "experiment_name": "forecastbench-baselines",
-    "git_commit": "22f0da7efd3f5f782934e00d53b340fb3c1b416a",
+    "git_commit": "5bde0fe9959fed7307a3aae8f1927acd59fdfb8b",
     "model_versions": {
       "gradient_boosting": "1.0",
       "linear_regression": "1.0",

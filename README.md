@@ -152,14 +152,16 @@ GitHub Actions runs formatting, linting, strict type checks, and tests on Window
 
 ## Follow the development roadmap
 
-- **Commit 3, frozen**: reproducible dataset preprocessing
-- **Commit 4, frozen**: model framework, baseline models, and training pipeline
-- **Commit 5, validation**: evaluation engine, benchmark outputs, and publication assets are implemented
-- **Next**: Commit 5.5 publication evidence package after Commit 5 freezes
+- ✓ **Commit 1 Complete**: repository bootstrap
+- ✓ **Commit 2 Complete**: development infrastructure
+- ✓ **Commit 3 Complete**: reproducible dataset preprocessing
+- ✓ **Commit 4 Complete**: model framework, baseline models, and training pipeline
+- ✓ **Commit 5 Complete**: evaluation engine, benchmark outputs, and publication assets
 
 ## Check current status
 
-Commit 5 Batches 1 through 3 are complete. The evaluation framework, reproducible benchmark outputs, and publication assets are implemented and undergoing the final validation and freeze gate.
+Commit 5 completed. The repository is ready for Commit 5.5, the Publication
+Evidence Package.
 
 ## License
 
