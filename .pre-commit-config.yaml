@@ -14,3 +14,16 @@ repos:
       - id: ruff-check
         args: [--fix]
       - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: mypy benchmark
+        language: python
+        additional_dependencies:
+          - mypy>=1.8,<2
+          - PyYAML>=6,<7
+          - types-PyYAML>=6,<7
+        pass_filenames: false
+        types: [python]

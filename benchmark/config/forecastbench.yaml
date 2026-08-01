@@ -1,0 +1,10 @@
+environment: development
+random_seed: 42
+
+paths:
+  data_dir: data
+  artifacts_dir: artifacts
+
+logging:
+  level: INFO
+  console: true

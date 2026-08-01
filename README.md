@@ -67,7 +67,48 @@ publication_evidence/      Supporting publication evidence
 publication_review/        Publication review materials
 ```
 
-The repository currently contains architecture and tooling scaffolding only. Benchmark logic will be introduced separately.
+The repository currently provides development infrastructure only. Dataset,
+model, and evaluation logic will be introduced in later, independently tested
+changes.
+
+## Development Setup
+
+BQEB ForecastBench requires Python 3.12.
+
+```shell
+python -m venv .venv
+python -m pip install --upgrade pip
+python -m pip install -e ".[dev]"
+pre-commit install
+```
+
+Run the complete local quality suite before submitting changes:
+
+```shell
+python -m ruff format --check .
+python -m ruff check .
+python -m mypy benchmark
+python -m pytest
+```
+
+GitHub Actions runs the same checks on Windows and Linux.
+
+## Configuration
+
+The default configuration is stored in
+`benchmark/config/forecastbench.yaml` and loaded as immutable dataclasses:
+
+```python
+from benchmark.config import load_config
+from benchmark.utils.logging import configure_logging
+
+config = load_config()
+logger = configure_logging(config.logging)
+```
+
+Runtime values can be overridden with `BQEB_ENVIRONMENT`, `BQEB_DATA_DIR`,
+`BQEB_ARTIFACTS_DIR`, `BQEB_LOG_LEVEL`, `BQEB_LOG_FILE`, and
+`BQEB_RANDOM_SEED`. Environment variables take precedence over YAML values.
 
 ## License
 
