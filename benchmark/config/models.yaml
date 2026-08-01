@@ -1,0 +1,105 @@
+# Baseline forecasting model configuration.
+
+default_model: linear_regression
+
+models:
+  linear_regression:
+    enabled: true
+    display_name: Linear Regression
+    parameters:
+      fit_intercept:
+        description: Estimate an intercept during fitting.
+        default: true
+        type: boolean
+      copy_X:
+        description: Copy the feature matrix before fitting.
+        default: true
+        type: boolean
+      n_jobs:
+        description: Parallel workers used for supported regression problems.
+        default: null
+        type: integer|null
+      positive:
+        description: Constrain learned coefficients to non-negative values.
+        default: false
+        type: boolean
+
+  random_forest:
+    enabled: true
+    display_name: Random Forest
+    parameters:
+      n_estimators:
+        description: Number of trees in the ensemble.
+        default: 200
+        type: integer
+      criterion:
+        description: Function used to measure split quality.
+        default: squared_error
+        type: string
+      max_depth:
+        description: Maximum depth of each tree; null allows unrestricted depth.
+        default: null
+        type: integer|null
+      min_samples_split:
+        description: Minimum samples required to split an internal node.
+        default: 2
+        type: integer|number
+      min_samples_leaf:
+        description: Minimum samples required at a leaf node.
+        default: 1
+        type: integer|number
+      max_features:
+        description: Feature fraction or strategy considered at each split.
+        default: 1.0
+        type: number|string|null
+      bootstrap:
+        description: Fit each tree from a bootstrap sample.
+        default: true
+        type: boolean
+      n_jobs:
+        description: Parallel workers; -1 uses all available processors.
+        default: -1
+        type: integer|null
+      random_state:
+        description: Seed used for reproducible estimator construction.
+        default: 42
+        type: integer|null
+
+  gradient_boosting:
+    enabled: true
+    display_name: Gradient Boosting
+    parameters:
+      loss:
+        description: Loss function optimized by the boosting stages.
+        default: squared_error
+        type: string
+      learning_rate:
+        description: Contribution applied to each fitted tree.
+        default: 0.1
+        type: number
+      n_estimators:
+        description: Number of sequential boosting stages.
+        default: 100
+        type: integer
+      subsample:
+        description: Fraction of samples used to fit each base learner.
+        default: 1.0
+        type: number
+      min_samples_split:
+        description: Minimum samples required to split an internal node.
+        default: 2
+        type: integer|number
+      min_samples_leaf:
+        description: Minimum samples required at a leaf node.
+        default: 1
+        type: integer|number
+      max_depth:
+        description: Maximum depth of each regression tree.
+        default: 3
+        type: integer|null
+      random_state:
+        description: Seed used for reproducible estimator construction.
+        default: 42
+        type: integer|null
+
+future_models: {}

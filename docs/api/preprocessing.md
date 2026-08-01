@@ -1,8 +1,9 @@
-# Preprocessing API
+# Use the preprocessing API
 
-The `benchmark.preprocessing` package provides a typed, configuration-driven data layer.
+This reference describes the typed, configuration-driven data layer exported
+from `benchmark.preprocessing`.
 
-## Pipeline
+## Run the preprocessing pipeline
 
 `BQEBPreprocessingPipeline` executes the reproducible flow:
 
@@ -26,10 +27,10 @@ pipeline.save(config.artifacts_dir / "preprocessing_pipeline.joblib")
 
 Only trusted pipeline files should be passed to `BQEBPreprocessingPipeline.load()` because joblib serialization can execute code during deserialization.
 
-## Configuration
+## Configure preprocessing
 
 The `preprocessing` section of `benchmark/config/forecastbench.yaml` controls CSV encoding and delimiter, schema columns and data types, validation policy, transformations, split ratios, random seed, shuffling, and chronological splitting.
 
-## Artifacts
+## Inspect preprocessing artifacts
 
 Successful runs write validation reports under `artifacts/reports`, dataset profiles under `artifacts/profiles`, and CSV partitions under `artifacts/splits`. Invalid datasets still produce validation and profile reports before processing stops.

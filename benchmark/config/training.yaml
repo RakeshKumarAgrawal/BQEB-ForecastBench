@@ -1,0 +1,16 @@
+# Training pipeline configuration. Paths are repository-relative.
+
+training:
+  default_model: linear_regression
+  checkpoint_interval: 1
+  random_seed: 42
+  artifact_paths:
+    models: artifacts/models
+    checkpoints: artifacts/checkpoints
+    training: artifacts/training
+  logging:
+    level: INFO
+    console: true
+  serialization:
+    compression: 3
+    protocol: 5

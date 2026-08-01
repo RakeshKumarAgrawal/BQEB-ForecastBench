@@ -1,3 +1,4 @@
 # Training Tests
 
-Tests for model training behavior will live here.
+Tests for trainer orchestration, callbacks, checkpoints, versioned model I/O,
+and training history artifacts live here.

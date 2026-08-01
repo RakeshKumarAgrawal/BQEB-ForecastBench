@@ -1,122 +1,64 @@
 # BQEB ForecastBench
 
-BQEB ForecastBench is an open benchmarking framework for evaluating artificial intelligence and machine learning models for smart grid forecasting using the BQEB-Data v1 benchmark dataset.
+BQEB ForecastBench is a Python 3.12 framework for reproducible smart-grid forecasting research with the BQEB-Data v1 dataset. Commit 4 includes dataset preprocessing, three baseline regressors, configuration-driven training, callbacks, checkpoints, versioned model artifacts, and training history. Evaluation metrics, benchmark execution, visualization, and publication outputs begin in Commit 5.
 
-## Features
+## Install the project
 
-- Standardized benchmark protocol
-- Public benchmark dataset
-- Baseline machine learning models
-- Reproducible evaluation
-- Open research artifacts
-- IEEE DataPort and Zenodo integration
-
-## Baseline Models
-
-- Linear Regression
-- Random Forest
-- Gradient Boosting
-
-## Evaluation Metrics
-
-- MAE
-- RMSE
-- MAPE
-- R²
-
-## Research Artifacts
-
-- BQEB-Data v1
-- IEEE DataPort
-- Zenodo
-- Benchmark documentation
-
-## Repository Architecture
-
-```text
-benchmark/                 Python benchmark package
-├── config/                Configuration loading and schemas
-├── models/                Forecasting model interfaces and implementations
-├── preprocessing/         Data validation and feature preparation
-├── training/              Model training workflows
-├── evaluation/            Metrics and benchmark evaluation
-├── visualization/         Plots and result visualization
-└── utils/                 Shared utilities
-data/                      Dataset workspace
-├── raw/                   Immutable source data
-├── processed/             Reproducible transformed data
-└── sample/                Small distributable examples
-docs/                      Project documentation
-├── design/                Design notes and benchmark specifications
-├── figures/               Documentation figures
-└── api/                   API reference
-tests/                     Automated test suite
-├── preprocessing/         Preprocessing tests
-├── training/              Training tests
-├── evaluation/            Evaluation tests
-└── models/                Model tests
-artifacts/                 Generated benchmark outputs
-├── models/                Exported models
-├── checkpoints/           Training checkpoints
-├── evaluation/            Predictions and metric outputs
-├── figures/               Generated visualizations
-├── reports/               Generated reports
-├── experiments/           Experiment metadata and logs
-├── profiles/              Dataset statistics and profiles
-└── splits/                Reproducible dataset partitions
-release/                   Release materials
-publication_evidence/      Supporting publication evidence
-publication_review/        Publication review materials
-```
-
-The repository currently provides development infrastructure and a reproducible
-dataset preprocessing layer. Model and evaluation logic will be introduced in
-later, independently tested changes.
-
-## Development Setup
-
-BQEB ForecastBench requires Python 3.12.
+Create an isolated environment and install the package with development tools:
 
 ```shell
 python -m venv .venv
+.venv\Scripts\activate
 python -m pip install --upgrade pip
 python -m pip install -e ".[dev]"
 pre-commit install
 ```
 
-Run the complete local quality suite before submitting changes:
+On Linux or macOS, activate the environment with `source .venv/bin/activate`.
 
-```shell
-python -m ruff format --check .
-python -m ruff check .
-python -m mypy benchmark
-python -m pytest
+## Understand the architecture
+
+The repository separates data preparation, model behavior, and training orchestration:
+
+```text
+benchmark/
+├── config/          YAML configuration and application settings
+├── models/          Base contract, registry, factory, and baseline models
+├── preprocessing/   Validation, profiling, transformation, and splitting
+├── training/        Trainer, callbacks, checkpoints, history, and model I/O
+└── utils/           Shared filesystem and logging utilities
+data/
+├── raw/             Immutable source data
+├── processed/       Reproducible transformed data
+└── sample/          Small distributable examples
+artifacts/
+├── models/          Versioned trained-model envelopes
+├── checkpoints/     Timestamped recovery records
+├── profiles/        Dataset profile exports
+├── reports/         Validation reports
+├── splits/          Train, validation, and test partitions
+└── training/        JSON history and Markdown operational summaries
+docs/
+├── api/             Public API references
+└── design/          Architecture and lifecycle descriptions
+tests/               Model, preprocessing, training, and infrastructure tests
 ```
 
-GitHub Actions runs the same checks on Windows and Linux.
+The model factory resolves classes through `ModelRegistry`. `ModelTrainer` uses that factory and delegates persistence, callbacks, and history to focused modules. See [model architecture](docs/design/model_architecture.md) and [training pipeline](docs/design/training_pipeline.md).
 
-## Configuration
+## Configure a run
 
-The default configuration is stored in
-`benchmark/config/forecastbench.yaml` and loaded as immutable dataclasses:
+ForecastBench uses three YAML files:
 
-```python
-from benchmark.config import load_config
-from benchmark.utils.logging import configure_logging
+- `benchmark/config/forecastbench.yaml`: application paths, dataset schema, preprocessing, and split settings
+- `benchmark/config/models.yaml`: enabled baseline models and documented estimator defaults
+- `benchmark/config/training.yaml`: default model, random seed, checkpoint interval, artifact paths, logging, and serialization
 
-config = load_config()
-logger = configure_logging(config.logging)
-```
+Application settings support `BQEB_ENVIRONMENT`, `BQEB_DATA_DIR`, `BQEB_ARTIFACTS_DIR`, `BQEB_LOG_LEVEL`, `BQEB_LOG_FILE`, and `BQEB_RANDOM_SEED` overrides. Environment variables take precedence over `forecastbench.yaml`.
 
-Runtime values can be overridden with `BQEB_ENVIRONMENT`, `BQEB_DATA_DIR`,
-`BQEB_ARTIFACTS_DIR`, `BQEB_LOG_LEVEL`, `BQEB_LOG_FILE`, and
-`BQEB_RANDOM_SEED`. Environment variables take precedence over YAML values.
+## Preprocess the dataset
 
-## Dataset Preprocessing
-
-The default YAML configuration defines the dataset schema, validation policy,
-missing-value strategy, selected and scaled columns, and deterministic split
-ratios. Run the complete preprocessing flow with:
+The preprocessing pipeline loads a comma-separated values (CSV) dataset, validates its schema, writes data profiles, transforms configured columns, and creates deterministic partitions:
 
 ```python
 from benchmark.preprocessing import (
@@ -124,14 +66,80 @@ from benchmark.preprocessing import (
     load_preprocessing_config,
 )
 
-pipeline = BQEBPreprocessingPipeline(load_preprocessing_config())
+config = load_preprocessing_config()
+pipeline = BQEBPreprocessingPipeline(config)
 splits = pipeline.fit_transform()
 ```
 
-The run exports JSON and Markdown validation reports, CSV and Markdown dataset
-statistics, and train, validation, and test CSV files. See
-`docs/api/preprocessing.md` for the public API and serialization guidance.
+The run writes validation reports, profiles, and split CSV files under `artifacts/`. Read the [preprocessing API](docs/api/preprocessing.md) for configuration and serialization details.
+
+## Use baseline models
+
+Commit 4 registers three scikit-learn regressors:
+
+- Linear regression
+- Random forest regression
+- Gradient boosting regression
+
+Create a configured model without algorithm-specific branching:
+
+```python
+import numpy as np
+
+from benchmark.models import create_model
+
+features = np.array([[0.0], [1.0], [2.0]])
+target = np.array([1.0, 3.0, 5.0])
+model = create_model("linear_regression")
+predictions = model.fit(features, target).predict(features)
+```
+
+Read the [models API](docs/api/models.md) for lifecycle, registry, factory, and persistence contracts.
+
+## Train and persist a model
+
+`ModelTrainer` loads `training.yaml`, creates a model through the factory, fits it, and writes configured artifacts:
+
+```python
+import numpy as np
+
+from benchmark.training import ModelTrainer
+
+features = np.array([[0.0], [1.0], [2.0]])
+target = np.array([1.0, 3.0, 5.0])
+trainer = ModelTrainer()
+model = trainer.train("linear_regression", features, target)
+```
+
+A successful run writes a trained model, an interval-controlled checkpoint, `training_history.json`, and `training_summary.md`. The summary is an operational training record, not a benchmark or publication report. Read the [training API](docs/api/training.md) for callbacks, checkpoint recovery, and model I/O.
+
+Only load joblib files from trusted sources. Joblib deserialization can execute code.
+
+## Run development checks
+
+Run the same gates as continuous integration (CI):
+
+```shell
+python -m ruff format --check .
+python -m ruff check .
+python -m mypy benchmark
+python -m pytest
+python -m pre_commit run --all-files
+```
+
+GitHub Actions runs formatting, linting, strict type checks, and tests on Windows and Linux for every push and pull request.
+
+## Follow the development roadmap
+
+- **Commit 3, frozen**: reproducible dataset preprocessing
+- **Commit 4, freeze candidate**: model framework, baseline models, and training pipeline
+- **Commit 5, next**: benchmark evaluation framework and metrics
+- **Later work**: visualization and publication artifacts after evaluation stabilizes
+
+## Check current status
+
+Commit 4 implementation is complete and undergoing final freeze review. The repository contains no benchmark evaluation, metrics, visualization, figures, tables, or publication reports.
 
 ## License
 
-MIT License
+The project uses the MIT License. See [LICENSE](LICENSE).

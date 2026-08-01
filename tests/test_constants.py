@@ -19,4 +19,4 @@ def test_project_paths_are_derived_from_repository_root() -> None:
 def test_project_metadata_is_defined() -> None:
     """Package metadata should be available to infrastructure modules."""
     assert PACKAGE_NAME == "bqeb-forecastbench"
-    assert VERSION == "0.3.0"
+    assert VERSION == "0.4.0"
