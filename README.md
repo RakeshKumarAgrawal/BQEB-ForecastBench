@@ -61,15 +61,17 @@ artifacts/                 Generated benchmark outputs
 ├── evaluation/            Predictions and metric outputs
 ├── figures/               Generated visualizations
 ├── reports/               Generated reports
-└── experiments/           Experiment metadata and logs
+├── experiments/           Experiment metadata and logs
+├── profiles/              Dataset statistics and profiles
+└── splits/                Reproducible dataset partitions
 release/                   Release materials
 publication_evidence/      Supporting publication evidence
 publication_review/        Publication review materials
 ```
 
-The repository currently provides development infrastructure only. Dataset,
-model, and evaluation logic will be introduced in later, independently tested
-changes.
+The repository currently provides development infrastructure and a reproducible
+dataset preprocessing layer. Model and evaluation logic will be introduced in
+later, independently tested changes.
 
 ## Development Setup
 
@@ -109,6 +111,26 @@ logger = configure_logging(config.logging)
 Runtime values can be overridden with `BQEB_ENVIRONMENT`, `BQEB_DATA_DIR`,
 `BQEB_ARTIFACTS_DIR`, `BQEB_LOG_LEVEL`, `BQEB_LOG_FILE`, and
 `BQEB_RANDOM_SEED`. Environment variables take precedence over YAML values.
+
+## Dataset Preprocessing
+
+The default YAML configuration defines the dataset schema, validation policy,
+missing-value strategy, selected and scaled columns, and deterministic split
+ratios. Run the complete preprocessing flow with:
+
+```python
+from benchmark.preprocessing import (
+    BQEBPreprocessingPipeline,
+    load_preprocessing_config,
+)
+
+pipeline = BQEBPreprocessingPipeline(load_preprocessing_config())
+splits = pipeline.fit_transform()
+```
+
+The run exports JSON and Markdown validation reports, CSV and Markdown dataset
+statistics, and train, validation, and test CSV files. See
+`docs/api/preprocessing.md` for the public API and serialization guidance.
 
 ## License
 

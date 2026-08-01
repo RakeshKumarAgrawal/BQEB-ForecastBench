@@ -1,0 +1,5 @@
+column,dtype,non_null_count,missing_count,missing_percent,unique_count,memory_bytes,stat_count,stat_unique,stat_top,stat_freq,stat_mean,stat_std,stat_min,stat_25%,stat_50%,stat_75%,stat_max
+timestamp,object,20,0,0.0,20,1380,20.0,20.0,2026-01-01T00:00:00Z,1.0,,,,,,,
+load_kw,float64,20,0,0.0,20,160,20.0,,,,143.42000000000002,22.318946400335584,111.8,119.25,147.95,153.85,181.3
+temperature_c,float64,20,0,0.0,20,160,20.0,,,,16.91,2.900435538981943,13.0,13.95,17.299999999999997,19.650000000000002,20.8
+humidity_percent,float64,20,0,0.0,16,160,20.0,,,,62.85,9.707701771491053,49.0,53.75,62.5,72.25,76.0

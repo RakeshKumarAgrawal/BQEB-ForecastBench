@@ -8,3 +8,46 @@ paths:
 logging:
   level: INFO
   console: true
+
+preprocessing:
+  input_path: data/sample/bqeb_sample.csv
+  loader:
+    encoding: utf-8
+    delimiter: ","
+  schema:
+    target_column: load_kw
+    timestamp_column: timestamp
+    required_columns:
+      - temperature_c
+      - humidity_percent
+    optional_columns: []
+    data_types:
+      load_kw: numeric
+      temperature_c: numeric
+      humidity_percent: numeric
+  validation:
+    check_missing_values: true
+    allow_missing_values: false
+    check_duplicate_records: true
+    allow_duplicate_records: false
+    check_duplicate_timestamps: true
+    allow_duplicate_timestamps: false
+    check_data_types: true
+  transformation:
+    missing_values: median
+    convert_timestamp: true
+    selected_columns:
+      - timestamp
+      - load_kw
+      - temperature_c
+      - humidity_percent
+    scale_columns:
+      - temperature_c
+      - humidity_percent
+  split:
+    train_ratio: 0.7
+    validation_ratio: 0.15
+    test_ratio: 0.15
+    random_seed: 42
+    shuffle: false
+    time_series: true
