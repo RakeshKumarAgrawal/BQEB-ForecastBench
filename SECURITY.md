@@ -36,6 +36,7 @@ Security concerns can be reported privately using:
 **Maintainer:**
 
 Rakesh Kumar Agrawal
+- Email: rkagrawal@ieee.org
 
 When reporting an issue, please include:
 
