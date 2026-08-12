@@ -466,15 +466,31 @@ artifacts/
 
 ---
 
-## Author & Research Profile
+
+## Code and data availability
+
+The source code is public at
+https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench. Version v1.0.0 is
+available through the GitHub Release and archived under the Zenodo software DOI
+above. The benchmark uses BQEB-Data v1. Frozen benchmark artifacts, the
+[experiment manifest](artifacts/experiments/experiment_manifest.json), and the
+[reproducibility evidence package](release/publication_evidence/evidence_index.md)
+are included in the repository archive.
+
+See the [changelog](CHANGELOG.md) and [release notes](RELEASE_NOTES.md) for the
+v1.0.0 release record.
+
+---
+
+# Author & Research Profile
 
 
-### Rakesh Kumar Agrawal
+## Rakesh Kumar Agrawal
 
 AI Engineer | Researcher | IEEE Senior Member
 
 
-### Research Areas
+## Research Areas
 
 - Artificial Intelligence
 - Smart Grid Intelligence
@@ -484,12 +500,12 @@ AI Engineer | Researcher | IEEE Senior Member
 - Enterprise AI Architecture
 
 
-### Research Interests
+## Research Interests
 
 Developing trustworthy and reproducible AI frameworks for complex engineering systems, including renewable energy intelligence, forecasting systems, and enterprise-scale AI platforms.
 
 
-### Research Links
+## Research Links
 
 GitHub:
 
@@ -505,19 +521,7 @@ Research Profile:
 
 https://rakeshkumaragrawal.github.io/
 
-
-## Code and data availability
-
-The source code is public at
-https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench. Version v1.0.0 is
-available through the GitHub Release and archived under the Zenodo software DOI
-above. The benchmark uses BQEB-Data v1. Frozen benchmark artifacts, the
-[experiment manifest](artifacts/experiments/experiment_manifest.json), and the
-[reproducibility evidence package](release/publication_evidence/evidence_index.md)
-are included in the repository archive.
-
-See the [changelog](CHANGELOG.md) and [release notes](RELEASE_NOTES.md) for the
-v1.0.0 release record.
+---
 
 ## License
 
