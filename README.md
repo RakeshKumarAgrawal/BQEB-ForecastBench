@@ -329,30 +329,182 @@ GitHub Actions runs formatting, linting, strict type checks, and tests on Window
 Commits 1 through 6 are complete and frozen. Version v1.0.0 is published as
 an annotated Git tag, a GitHub Release, and a permanent Zenodo software archive.
 
-## Citation
+---
 
-If you use **BQEB-ForecastBench** in academic research, please cite both the
-software release and the associated scientific publication.
+# Benchmark Results
 
-### Software Citation
+BQEB-ForecastBench provides a standardized evaluation framework for comparing AI forecasting models for smart grid applications.
+
+The benchmark evaluation supports:
+
+- Forecast accuracy comparison
+- Model performance analysis
+- Error evaluation
+- Reproducible experiments
+- Publication-ready benchmark artifacts
+
+
+## Evaluation Metrics
+
+Models are evaluated using:
+
+| Metric | Description |
+|---|---|
+| MAE | Mean Absolute Error |
+| RMSE | Root Mean Square Error |
+| MAPE | Mean Absolute Percentage Error |
+| R² Score | Model explanatory performance |
+| Inference Time | Computational efficiency |
+| Robustness | Reliability under different scenarios |
+
+
+## Benchmark Outputs
+
+The framework generates:
+
+- Prediction results
+- Evaluation reports
+- Comparison tables
+- Performance visualizations
+- Publication-ready figures
+- Reproducibility artifacts
+
+
+Benchmark artifacts are available under:
+
+
+# How to Cite BQEB-ForecastBench
+
+If you use **BQEB-ForecastBench** in academic research, publications, benchmarking studies, or experimental evaluations, please cite the software release and associated scientific research publication.
+
+
+## Software Citation
 
 **BQEB-ForecastBench v1.0.0**
 
-Zenodo Software DOI: https://doi.org/10.5281/zenodo.21735978
+Rakesh Kumar Agrawal.
 
-See [CITATION.cff](CITATION.cff) for structured citation metadata and the
-[GitHub v1.0.0 release](https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench/releases/tag/v1.0.0)
-for the archived release record.
+*BQEB-ForecastBench: Benchmarking AI Models for Smart Grid Forecasting Using BIO-Quantum Energy Brain Dataset.*
 
-### Scientific Publication
+Zenodo Software Archive.
 
-**Research Square Preprint**
+DOI:
 
-Preprint DOI: https://doi.org/10.21203/rs.3.rs-10484554/v1
+https://doi.org/10.5281/zenodo.21735978
 
-The Research Square DOI identifies the scientific preprint. The Zenodo DOI
-identifies the versioned software implementation and permanent repository
-archive; the two records are distinct and complementary.
+
+GitHub Repository:
+
+https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench
+
+
+For structured citation metadata, see:
+
+[CITATION.cff](CITATION.cff)
+
+
+---
+
+## Scientific Publication Citation
+
+**BIO-Quantum Energy Brain: A Unified Intelligence Framework for Smart Grids, Storage, and Renewable Energy Systems**
+
+Research Square Preprint.
+
+DOI:
+
+https://doi.org/10.21203/rs.3.rs-10484554/v1
+
+
+The Research Square DOI identifies the scientific research publication.
+
+The Zenodo DOI identifies the versioned software implementation and permanent repository archive.
+
+Both records are distinct and complementary.
+
+
+---
+
+## Benchmark Results
+
+BQEB-ForecastBench provides a standardized evaluation framework for comparing Artificial Intelligence forecasting models for smart grid applications.
+
+
+### Evaluation Metrics
+
+| Metric | Description |
+|---|---|
+| MAE | Mean Absolute Error |
+| RMSE | Root Mean Square Error |
+| MAPE | Mean Absolute Percentage Error |
+| R² Score | Model explanatory performance |
+| Inference Time | Computational efficiency |
+| Robustness | Reliability across scenarios |
+
+
+### Benchmark Outputs
+
+The framework generates:
+
+- Forecast predictions
+- Evaluation reports
+- Model comparison tables
+- Performance visualizations
+- Publication-ready figures
+- Reproducibility artifacts
+
+
+Generated artifacts are organized under:
+artifacts/
+├── evaluation/
+├── experiments/
+├── figures/
+├── reports/
+└── tables/
+
+
+
+---
+
+## Author & Research Profile
+
+
+### Rakesh Kumar Agrawal
+
+AI Engineer | Researcher | IEEE Senior Member
+
+
+### Research Areas
+
+- Artificial Intelligence
+- Smart Grid Intelligence
+- Renewable Energy Forecasting
+- Machine Learning Benchmarking
+- Responsible AI Systems
+- Enterprise AI Architecture
+
+
+### Research Interests
+
+Developing trustworthy and reproducible AI frameworks for complex engineering systems, including renewable energy intelligence, forecasting systems, and enterprise-scale AI platforms.
+
+
+### Research Links
+
+GitHub:
+
+https://github.com/RakeshKumarAgrawal
+
+
+ORCID:
+
+https://orcid.org/0009-0009-7113-5539
+
+
+Research Profile:
+
+https://rakeshkumaragrawal.github.io/
+
 
 ## Code and data availability
 
