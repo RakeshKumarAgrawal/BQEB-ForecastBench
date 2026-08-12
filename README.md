@@ -1,6 +1,38 @@
-# BQEB ForecastBench
+![BQEB-ForecastBench Banner](docs/bqeb-banner.png)
 
-BQEB ForecastBench is a Python 3.12 framework for reproducible smart-grid forecasting research with the BQEB-Data v1 dataset. The repository includes dataset preprocessing, three baseline regressors, configuration-driven training, benchmark evaluation, machine-readable experiment artifacts, and publication-ready tables, figures, and reports.
+# BQEB-ForecastBench
+
+## Benchmarking AI Models for Smart Grid Forecasting Using
+## BIO-Quantum Energy Brain (BQEB) Dataset
+[![GitHub Stars](https://img.shields.io/github/stars/RakeshKumarAgrawal/BQEB-ForecastBench)](https://github.com/RakeshKumarAgrawal/BQEB-ForecastBench)
+
+[![License](https://img.shields.io/github/license/RakeshKumarAgrawal/BQEB-ForecastBench)]()
+
+[![DOI](https://zenodo.org/badge/DOI/YOUR_DOI.svg)](YOUR_DOI)
+
+[![Research](https://img.shields.io/badge/Research-AI%20Benchmark-blue)]()
+
+BQEB-ForecastBench is an open research benchmark framework designed to evaluate Artificial Intelligence models for smart grid forecasting using the BIO-Quantum Energy Brain (BQEB) dataset.
+
+The project provides reproducible datasets, forecasting workflows, evaluation metrics, and benchmarking methodologies for next-generation renewable energy intelligence systems.
+
+# Research Motivation
+
+The increasing adoption of renewable energy sources introduces uncertainty in modern power grids.
+
+Accurate forecasting of solar generation, wind power, energy storage behavior, and grid demand requires advanced Artificial Intelligence approaches.
+
+BQEB-ForecastBench addresses this challenge by providing a standardized evaluation framework for AI-driven forecasting models.
+# Key Contributions
+
+BQEB-ForecastBench provides:
+
+- A benchmark framework for smart grid forecasting
+- BIO-Quantum Energy Brain (BQEB) dataset integration
+- AI model evaluation pipeline
+- Reproducible forecasting experiments
+- Standardized performance metrics
+- Research-ready documentation
 
 ## Install the project
 
