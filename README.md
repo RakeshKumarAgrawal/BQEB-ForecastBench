@@ -1,12 +1,8 @@
-![BQEB-ForecastBench Banner](docs/bqeb-banner.png)
-
-# BQEB-ForecastBench
-
 ![BQEB-ForecastBench Banner](docs/images/bqeb-banner.png)
 
 # BQEB-ForecastBench
 
-## Benchmarking AI Models for Smart Grid Forecasting Using
+## Benchmarking AI Models for Smart Grid Forecasting Using  
 ## BIO-Quantum Energy Brain (BQEB) Dataset
 
 
@@ -17,14 +13,20 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21735978.svg)](https://doi.org/10.5281/zenodo.21735978)
 
 [![Research](https://img.shields.io/badge/Research-AI%20Benchmark-blue)]()
+
 [![Domain](https://img.shields.io/badge/Domain-Smart%20Grid%20AI-green)]()
 
+
+## Overview
+
 BQEB-ForecastBench is an open research benchmark framework designed to evaluate Artificial Intelligence models for smart grid forecasting using the BIO-Quantum Energy Brain (BQEB) dataset.
-The project provides reproducible datasets, forecasting workflows, evaluation metrics, and benchmarking methodologies for next-generation renewable energy intelligence systems.
+
+The project provides reproducible datasets, forecasting workflows, evaluation metrics, benchmark experiments, and publication-ready research artifacts for next-generation renewable energy intelligence systems.
+
 
 ---
 
-## Research Abstract
+# Research Abstract
 
 The transition toward renewable energy requires intelligent forecasting systems capable of handling uncertainty, variability, and complex temporal dependencies.
 
@@ -34,11 +36,14 @@ The framework combines:
 
 - BIO-Quantum Energy Brain (BQEB) dataset integration
 - AI model benchmarking
-- Reproducible experiments
+- Reproducible forecasting experiments
 - Standardized evaluation metrics
 - Publication-ready research artifacts
 
 The project aims to accelerate trustworthy AI adoption in renewable energy forecasting research.
+
+
+---
 
 # Research Motivation
 
@@ -47,6 +52,10 @@ The increasing adoption of renewable energy sources introduces uncertainty in mo
 Accurate forecasting of solar generation, wind power, energy storage behavior, and grid demand requires advanced Artificial Intelligence approaches.
 
 BQEB-ForecastBench addresses this challenge by providing a standardized evaluation framework for AI-driven forecasting models.
+
+
+---
+
 # Key Contributions
 
 BQEB-ForecastBench provides:
@@ -57,6 +66,66 @@ BQEB-ForecastBench provides:
 - Reproducible forecasting experiments
 - Standardized performance metrics
 - Research-ready documentation
+- Versioned benchmark artifacts
+- Publication reproducibility support
+
+
+---
+
+# Research Architecture
+
+![BQEB Research Architecture](docs/images/bqeb-research-architecture.png)
+
+
+---
+
+# Benchmark Workflow
+
+![Benchmark Workflow](docs/images/bqeb-workflow.png)
+
+
+The benchmark lifecycle follows:
+
+1. Dataset preparation
+2. Data validation
+3. Feature engineering
+4. Model training
+5. Forecast generation
+6. Performance evaluation
+7. Publication artifact generation
+
+
+---
+
+# Dataset and Research Artifacts
+
+## BQEB Dataset
+
+BQEB-ForecastBench uses the BIO-Quantum Energy Brain (BQEB) dataset for smart grid forecasting research.
+
+Research artifacts are distributed through permanent research repositories.
+
+
+## Software Release
+
+**BQEB-ForecastBench v1.0.0**
+
+Zenodo DOI:
+
+https://doi.org/10.5281/zenodo.21735978
+
+
+## Scientific Publication
+
+Research Square Preprint DOI:
+
+https://doi.org/10.21203/rs.3.rs-10484554/v1
+
+
+---
+
+## Understand the architecture
+
 
 ## Install the project
 # Benchmark Workflow
